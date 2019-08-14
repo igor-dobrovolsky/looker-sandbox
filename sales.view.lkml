@@ -30,19 +30,21 @@ view: sales {
     description: "Total cost of order"
     type: sum
     sql: ${sale_dollars} ;;
+    value_format: "$0.0,,\" M\""
   }
 
   measure: max_sale_dollars  {
     description: "Maximum cost of an order"
     type: max
     sql: ${sale_dollars} ;;
+    value_format_name: usd
   }
 
   measure: avg_sale_dollars  {
     description: "Average cost of an order"
     type: average
     sql: ${sale_dollars} ;;
-    value_format: "0.000,,\" M\""
+    value_format_name: usd
   }
 
   # # Define your dimensions and measures here, like this:
