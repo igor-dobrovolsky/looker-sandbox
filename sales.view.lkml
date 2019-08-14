@@ -20,10 +20,29 @@ view: sales {
     sql:${TABLE}.zip_code ;;
   }
 
+  dimension: sale_dollars {
+    type:  number
+    sql:${TABLE}.sale_dollars ;;
+    value_format_name: usd
+  }
+
   measure: total_sale_dollars  {
     description: "Total cost of order"
     type: sum
-    sql: ${TABLE}.sale_dollars ;;
+    sql: ${sale_dollars} ;;
+  }
+
+  measure: max_sale_dollars  {
+    description: "Maximum cost of an order"
+    type: max
+    sql: ${sale_dollars} ;;
+  }
+
+  measure: avg_sale_dollars  {
+    description: "Average cost of an order"
+    type: average
+    sql: ${sale_dollars} ;;
+    value_format: "0.000,,\" M\""
   }
 
   # # Define your dimensions and measures here, like this:

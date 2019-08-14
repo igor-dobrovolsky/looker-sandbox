@@ -9,3 +9,5 @@ datagroup: bq_test_default_datagroup {
 }
 
 persist_with: bq_test_default_datagroup
+
+explore: sales {}
