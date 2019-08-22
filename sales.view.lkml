@@ -5,7 +5,7 @@ view: sales {
     description: "The date of order"
     type: time
     timeframes: [date, week, month, year]
-    sql: ${TABLE}.date ;;
+    sql: TIMESTAMP(${TABLE}.date) ;;
   }
 
   dimension: city {
